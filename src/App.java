@@ -18,21 +18,27 @@ public class App {
         System.out.println("You need to guess a number between 1 and 100");
         System.out.println("You can choose between easy, medium and hard for the difficulty");
         System.out.println("With 10, 5 and 1 chances respectively");
-        System.out.println("Please select the difficulty level:");
-        System.out.println("Please press 1 for easy");
-        System.out.println("Please press 2 for medium");
-        System.out.println("Please press 3 for hard");
-        difficultySelNum = s.nextInt();
-        if (difficultySelNum == 1) {
-            numChances = 10;
-            difficultySelected = "easy";
-        } else if (difficultySelNum == 2){
-            numChances = 5;
-            difficultySelected = "medium";
-        } else if (difficultySelNum == 3) {
-            numChances = 1;
-            difficultySelected = "hard";
-        }
+
+        do {
+            System.out.println("Please select the difficulty level:");
+            System.out.println("Please press 1 for easy");
+            System.out.println("Please press 2 for medium");
+            System.out.println("Please press 3 for hard");
+            difficultySelNum = s.nextInt();    
+            if (difficultySelNum == 1) {
+                numChances = 10;
+                difficultySelected = "easy";
+            } else if (difficultySelNum == 2){
+                numChances = 5;
+                difficultySelected = "medium";
+            } else if (difficultySelNum == 3) {
+                numChances = 1;
+                difficultySelected = "hard";
+            } else {
+                System.out.println("Error! Please try again");
+            }
+        } while (difficultySelNum != 1 || difficultySelNum != 2 || difficultySelNum != 3);
+
         System.out.println("Very well! You selectect " + difficultySelected);
 
         while (numChances != 0) {
